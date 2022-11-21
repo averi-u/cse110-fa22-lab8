@@ -1,7 +1,7 @@
 describe('Basic user flow for Website', () => {
   // First, visit the lab 8 website
   beforeAll(async () => {
-    await page.goto('http://127.0.0.1:5500/index.html');
+    await page.goto('https://averi-u.github.io/cse110-fa22-lab8/');
   });
 
   // Next, check to make sure that all 20 <product-item> elements have loaded
@@ -105,7 +105,7 @@ describe('Basic user flow for Website', () => {
     // Reload the page, then select all of the <product-item> elements, and check every
     // element to make sure that all of their buttons say "Remove from Cart".
     // Also check to make sure that #cart-count is still 20
-    await page.goto('http://127.0.0.1:5500/index.html');
+    await page.goto('https://averi-u.github.io/cse110-fa22-lab8/');
     const prodItems = await page.$$('product-item');
     for (let i = 0; i < prodItems.length; i++) {
       let shadowRoot = await prodItems[i].getProperty('shadowRoot');
@@ -164,7 +164,7 @@ describe('Basic user flow for Website', () => {
     // Reload the page once more, then go through each <product-item> to make sure that it has remembered nothing
     // is in the cart - do this by checking the text on the buttons so that they should say "Add to Cart".
     // Also check to make sure that #cart-count is still 0
-    await page.goto('http://127.0.0.1:5500/index.html');
+    await page.goto('https://averi-u.github.io/cse110-fa22-lab8/');
     let product = await page.$('product-item');
     const prodItems = await page.$$('product-item');
     for (let i = 0; i < prodItems.length; i++) {
